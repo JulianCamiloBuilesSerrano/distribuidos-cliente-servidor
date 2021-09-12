@@ -9,9 +9,10 @@ import java.rmi.server.*;
  */
 public class Server 
 {
-    public static final int PORT = 1000;
+    public static final int PORT = 1100;
     public static void main( String[] args )
     {
+        System.setProperty("java.rmi.server.hostname", "25.86.45.96");
     	 try {
              Registry registry =  LocateRegistry.createRegistry(PORT);
              registry.rebind("Ofertas", new OfertasImp("Ofertas"));

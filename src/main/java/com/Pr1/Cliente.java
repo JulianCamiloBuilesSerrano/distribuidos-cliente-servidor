@@ -3,7 +3,7 @@ import java.rmi.registry.*;
 import java.rmi.server.*;
 import java.rmi.*;
 public class Cliente {
-	public static final int PORT = 1000;
+	public static final int PORT = 1100;
     public static final String IP = "25.86.45.96";
 	public static void main(String args[]) {
         int res = 0;
