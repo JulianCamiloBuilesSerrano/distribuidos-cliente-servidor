@@ -15,7 +15,7 @@ public class Server
         System.setProperty("java.rmi.server.hostname", "25.86.45.96");
     	 try {
              Registry registry =  LocateRegistry.createRegistry(PORT);
-             registry.rebind("Ofertas", new OfertasImp("Ofertas"));
+             registry.rebind("Ofertas", new OfertasImp());
          } catch (Exception e) {
              System.err.println("System exception" + e);
          }
