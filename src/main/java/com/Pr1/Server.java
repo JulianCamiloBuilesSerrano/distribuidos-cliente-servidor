@@ -1,5 +1,7 @@
 package com.Pr1;
 import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.*;
 /**
  * Hello world!
@@ -7,10 +9,12 @@ import java.rmi.server.*;
  */
 public class Server 
 {
+    public static final int PORT = 1000;
     public static void main( String[] args )
     {
     	 try {
-             OfertasImp server = new OfertasImp("rmi://localhost:8000/objeto" );
+             Registry registry =  LocateRegistry.createRegistry(PORT);
+             registry.rebind("Ofertas", new OfertasImp("Ofertas"));
          } catch (Exception e) {
              System.err.println("System exception" + e);
          }

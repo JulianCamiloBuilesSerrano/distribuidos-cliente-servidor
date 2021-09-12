@@ -4,17 +4,11 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 public class OfertasImp extends UnicastRemoteObject implements Ofertas {
-
+	
 	public OfertasImp(String name) throws RemoteException{
 		super();
-		try {
-            System.out.println("Rebind Object " + name);
-            LocateRegistry.createRegistry(8000);
-            Naming.rebind(name, this);
-        } catch (Exception e) {
-            System.out.println("Exception: " + e.getMessage());
-            e.printStackTrace();
-        }
+		System.out.println("Rebind Object " + name);
+	
     }
 	
 	@Override
